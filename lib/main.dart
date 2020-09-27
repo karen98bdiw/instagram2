@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import './widgets/myBottomNavigationBar.dart';
 
-import './pages/addPage/addPage.dart';
-import './pages/homePage/homePage.dart';
-import './pages/notesPage/notePage.dart';
-import './pages/profilePage/profilePage.dart';
-import './pages/searchPage/searchPage.dart';
+import 'screens/addScreen/AddScreen.dart';
+import 'screens/homeScreen/HomeScreen.dart';
+import 'screens/notesScreen/NoteScreen.dart';
+import 'screens/profileScreen/ProfilePage.dart';
+import 'screens/searchScreen/SearchScreen.dart';
 
 main() => runApp(MyApp());
 
@@ -15,39 +15,39 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "instagram",
-      home: MyHomePage(),
+      home: MyHomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomeScreen extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomeScreenState createState() => _MyHomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  var pages = [
-    HomePage(),
-    SearchPage(),
-    AddPage(),
-    NotesPage(),
-    ProfilePage(),
+class _MyHomeScreenState extends State<MyHomeScreen> {
+  var screens = [
+    HomeScreen(),
+    SearchScreen(),
+    AddScreen(),
+    NotesScreen(),
+    ProfileScreen(),
   ];
 
-  var _curentPageIndex = 0;
+  var _curentScreenIndex = 0;
 
   _onNavItemTapped(int index) {
     setState(() {
-      _curentPageIndex = index;
+      _curentScreenIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[_curentPageIndex],
+      body: screens[_curentScreenIndex],
       bottomNavigationBar:
-          MyBottomNavigtionBar(_curentPageIndex, _onNavItemTapped),
+          MyBottomNavigtionBar(_curentScreenIndex, _onNavItemTapped),
     );
   }
 }

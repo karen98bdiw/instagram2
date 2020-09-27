@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class NotesPage extends StatelessWidget {
+class AddScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("Notes Page"),
+        child: Text("Add Page"),
       ),
     );
   }
