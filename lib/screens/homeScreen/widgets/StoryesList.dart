@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
+import '../../../utils/UsersDB.dart';
 
 class StoryiesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      width: double.infinity,
+      height: MediaQuery.of(context).size.height * 0.2,
       child: ListView.builder(
-        itemBuilder: (ctx, index) => Container(
-          height: 50,
-          width: 50,
-          color: Colors.green,
-          margin: EdgeInsets.only(left: 10),
-        ),
-        itemCount: 20,
+        itemCount: UsersDB.users.length,
         scrollDirection: Axis.horizontal,
+        itemBuilder: (ctx, index) => LayoutBuilder(
+          builder: (ctx, c) => Container(
+            margin: EdgeInsets.all(5),
+            height: c.maxHeight * 0.9,
+            width: c.maxHeight * 0.9,
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black, width: 2),
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage(UsersDB.users[index].image),
+                )),
+          ),
+        ),
       ),
     );
   }
