@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(vertical: 8, horizontal: 2),
           child: Column(
-            children: [StoryiesList(), Post()],
+            children: [StoryiesList(), Post(), Post()],
           )),
     );
   }

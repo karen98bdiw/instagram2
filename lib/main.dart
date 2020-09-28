@@ -16,6 +16,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "instagram",
       home: MyHomeScreen(),
+      theme: ThemeData.light().copyWith(
+        iconTheme: IconThemeData(color: Colors.black),
+        appBarTheme: AppBarTheme().copyWith(
+            textTheme: TextTheme(
+              title: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            iconTheme: IconThemeData(
+              color: Colors.black,
+            )),
+        primaryColor: Colors.grey[100],
+        textTheme: TextTheme(
+          body1: TextStyle(color: Colors.black),
+          body2: TextStyle(color: Colors.black),
+          title: TextStyle(color: Colors.black),
+        ),
+      ),
     );
   }
 }
