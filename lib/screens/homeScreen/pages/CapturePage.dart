@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import '../widgets/CapturePageAppBar.dart';
 
 class CapturePage extends StatelessWidget {
+  final Function nextPageCallBack;
+
+  CapturePage(this.nextPageCallBack);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
+    return Scaffold(
+      appBar: CapturePageAppBar(nextPageCallBack),
+      body: Center(
         child: Text("capture"),
       ),
     );

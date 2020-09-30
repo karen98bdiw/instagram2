@@ -18,6 +18,16 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
+  void goNextPageCallBack() {
+    _pageController.animateToPage((_pageController.page + 1.0).floor(),
+        duration: Duration(milliseconds: 500), curve: Curves.ease);
+  }
+
+  void goPreviusPageCallBack() {
+    _pageController.animateToPage((_pageController.page - 1.0).floor(),
+        duration: Duration(milliseconds: 500), curve: Curves.ease);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
       controller: _pageController,
       scrollDirection: Axis.horizontal,
       children: [
-        CapturePage(),
-        HomePage(),
-        DirectPage(),
+        CapturePage(goNextPageCallBack),
+        HomePage(_pageController),
+        DirectPage(goPreviusPageCallBack),
       ],
     ));
   }

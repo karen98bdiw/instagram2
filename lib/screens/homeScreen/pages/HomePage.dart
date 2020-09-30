@@ -5,6 +5,10 @@ import '../widgets/StoryesList.dart';
 import '../widgets/PostWidget.dart';
 
 class HomePage extends StatelessWidget {
+  final PageController _pageController;
+
+  HomePage(this._pageController);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
