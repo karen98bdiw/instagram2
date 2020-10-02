@@ -8,8 +8,18 @@ class DirectPageAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text("Direct"),
-      leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: _goBack),
+      title: Text(
+        "Direct",
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+      leading: IconButton(
+          icon: Icon(Icons.arrow_back), onPressed: () => print("back")),
+      actions: [
+        IconButton(
+            icon: Icon(Icons.video_call), onPressed: () => print("videoChat")),
+        IconButton(
+            icon: Icon(Icons.chat), onPressed: () => print("messageChat")),
+      ],
     );
   }
 
