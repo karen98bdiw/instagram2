@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class HomePageAppBar extends StatelessWidget with PreferredSizeWidget {
+  final Function openDirect;
+  final Function openCapture;
+
+  HomePageAppBar(this.openCapture, this.openDirect);
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -9,11 +14,9 @@ class HomePageAppBar extends StatelessWidget with PreferredSizeWidget {
       title: Text("Instagram"),
       leading: GestureDetector(
         child: Icon(Icons.camera_alt),
-        onTap: () => print("capture"),
+        onTap: openCapture,
       ),
-      actions: [
-        IconButton(icon: Icon(Icons.message), onPressed: () => print("direct"))
-      ],
+      actions: [IconButton(icon: Icon(Icons.message), onPressed: openDirect)],
     );
   }
 

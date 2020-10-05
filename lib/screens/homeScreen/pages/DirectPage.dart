@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/DirectPageAppBar.dart';
+import '../../../utils/UsersDB.dart';
 
 class DirectPage extends StatelessWidget {
   final Function _goBackCallBack;
 
   DirectPage(this._goBackCallBack);
 
+  final users = UsersDB.users;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,27 @@ class DirectPage extends StatelessWidget {
                 hintText: "Find",
               ),
             ),
-          )
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (ctx, index) => ListTile(
+                leading: CircleAvatar(
+                  radius: 40,
+                  child: ClipOval(
+                    child: Image.asset(users[index].image),
+                  ),
+                ),
+                title: Text(
+                  users[index].name,
+                  style: Theme.of(context).textTheme.title,
+                ),
+                subtitle: Text("online 2min ago"),
+                trailing:
+                    IconButton(icon: Icon(Icons.camera_alt), onPressed: null),
+              ),
+              itemCount: users.length,
+            ),
+          ),
         ],
       ),
     );

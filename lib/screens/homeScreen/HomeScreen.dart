@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       scrollDirection: Axis.horizontal,
       children: [
         CapturePage(goNextPageCallBack),
-        HomePage(_pageController),
+        HomePage(goPreviusPageCallBack, goNextPageCallBack),
         DirectPage(goPreviusPageCallBack),
       ],
     ));

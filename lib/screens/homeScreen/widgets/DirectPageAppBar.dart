@@ -12,8 +12,7 @@ class DirectPageAppBar extends StatelessWidget with PreferredSizeWidget {
         "Direct",
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
-      leading: IconButton(
-          icon: Icon(Icons.arrow_back), onPressed: () => print("back")),
+      leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: _goBack),
       actions: [
         IconButton(
             icon: Icon(Icons.video_call), onPressed: () => print("videoChat")),

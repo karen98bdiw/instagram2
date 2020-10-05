@@ -5,14 +5,15 @@ import '../widgets/StoryesList.dart';
 import '../widgets/PostWidget.dart';
 
 class HomePage extends StatelessWidget {
-  final PageController _pageController;
+  final Function openDirectPage;
+  final Function openCapturePage;
 
-  HomePage(this._pageController);
+  HomePage(this.openCapturePage, this.openDirectPage);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HomePageAppBar(),
+      appBar: HomePageAppBar(openCapturePage, openDirectPage),
       body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(vertical: 8, horizontal: 2),
           child: Column(

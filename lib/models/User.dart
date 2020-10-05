@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class User {
-  String name;
-  String image;
+  final String name;
+  final String image;
 
-  User(this.name, this.image);
+  const User(this.name, this.image);
 }
