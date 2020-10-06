@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/HomePageAppBar.dart';
-import '../widgets/StoryesList.dart';
-import '../widgets/PostWidget.dart';
+import '../homePageWidgets/HomePageAppBar.dart';
+import '../homePageWidgets/StoryesList.dart';
+import '../homePageWidgets/PostWidget.dart';
 
 class HomePage extends StatelessWidget {
   final Function openDirectPage;

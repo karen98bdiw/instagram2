@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:instagram/utils/UsersDB.dart';
 
 class Post extends StatelessWidget {
   @override
@@ -12,16 +12,8 @@ class Post extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 3, horizontal: 5),
             child: ListTile(
               contentPadding: EdgeInsets.symmetric(horizontal: 0),
-              leading: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: CircleAvatar(
-                  child: Icon(Icons.supervised_user_circle),
-                  minRadius: 30,
-                ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(UsersDB.users[0].image),
               ),
               title: Text(
                 "John Lenon",
@@ -111,7 +103,7 @@ class Post extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           CircleAvatar(
-                            child: Icon(Icons.supervised_user_circle),
+                            backgroundImage: AssetImage(UsersDB.users[0].image),
                           ),
                           SizedBox(
                             width: 10,

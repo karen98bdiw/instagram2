@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/CapturePageAppBar.dart';
+import '../homePageWidgets/CapturePageAppBar.dart';
 
 class CapturePage extends StatelessWidget {
   final Function nextPageCallBack;

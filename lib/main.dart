@@ -5,7 +5,7 @@ import './widgets/myBottomNavigationBar.dart';
 import 'screens/addScreen/AddScreen.dart';
 import 'screens/homeScreen/HomeScreen.dart';
 import 'screens/notesScreen/NoteScreen.dart';
-import 'screens/profileScreen/ProfilePage.dart';
+import 'screens/profileScreen/ProfileScreen.dart';
 import 'screens/searchScreen/SearchScreen.dart';
 
 main() => runApp(MyApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/DirectPageAppBar.dart';
+import '../homePageWidgets/DirectPageAppBar.dart';
 import '../../../utils/UsersDB.dart';
 
 class DirectPage extends StatelessWidget {

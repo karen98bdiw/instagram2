@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'pages/CapturePage.dart';
-import 'pages/HomePage.dart';
-import 'pages/DirectPage.dart';
+import 'homePages/CapturePage.dart';
+import 'homePages/HomePage.dart';
+import 'homePages/DirectPage.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

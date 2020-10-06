@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreenDrawer extends Drawer {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Drawer(
       child: Center(
-        child: Text("Profile Page"),
+        child: Text("profileDrawer"),
       ),
     );
   }
