@@ -44,6 +44,7 @@ class ProfileScreenInfo extends StatelessWidget {
         fontSize: 15,
       ),
       textAlign: TextAlign.left,
+      maxLines: 1,
     );
   }
 
@@ -53,6 +54,7 @@ class ProfileScreenInfo extends StatelessWidget {
       style: TextStyle(
         fontSize: 13,
       ),
+      maxLines: 1,
       textAlign: TextAlign.left,
     );
   }
@@ -62,15 +64,16 @@ class ProfileScreenInfo extends StatelessWidget {
     var query = MediaQuery.of(context);
     var orientation = query.orientation;
     return Container(
+      padding: EdgeInsets.only(top: 0),
       color: Colors.amber[200],
       height: query.size.height * 0.3,
       child: LayoutBuilder(
         builder: (ctx, cnts) => Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               color: Colors.red[200],
-              height: cnts.maxHeight * 0.4,
+              height: cnts.maxHeight * 0.5,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -85,23 +88,38 @@ class ProfileScreenInfo extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: cnts.maxHeight * 0.30,
-              alignment: Alignment.topLeft,
-              color: Colors.blueAccent[200],
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _userFullName("John", "Lenon"),
-                  _userBio("i dont know")
-                ],
+            Flexible(
+              child: Container(
+                alignment: Alignment.topLeft,
+                color: Colors.blueAccent[200],
+                padding: orientation == Orientation.portrait
+                    ? EdgeInsets.symmetric(vertical: 10, horizontal: 15)
+                    : EdgeInsets.all(0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    _userFullName("John", "Lenon"),
+                    _userBio("i dont know")
+                  ],
+                ),
               ),
             ),
-            Text(
-              "data",
-              style: TextStyle(backgroundColor: Colors.red),
-            ),
+            Container(
+              width: cnts.maxWidth * 0.95,
+              height: cnts.maxHeight * 0.15,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(3),
+                border: Border.all(width: 1, color: Colors.grey[400]),
+              ),
+              child: Text(
+                "Edit profile",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                ),
+              ),
+            )
           ],
         ),
       ),
