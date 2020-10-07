@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'profileScreenWidgets/ProfileScreenAppBar.dart';
 import 'profileScreenWidgets/ProfileScreenDrawer.dart';
 import './profileScreenWidgets/ProfileScreenInfo.dart';
-import './profileScreenWidgets/profileActualStories.dart';
+import './profileScreenWidgets/ProfileActualStories.dart';
+import './profileScreenWidgets/ProfilePosts.dart';
 
 import '../../models/User.dart';
 import '../../utils/UsersDB.dart';
@@ -21,6 +22,7 @@ class ProfileScreen extends StatelessWidget {
         children: [
           ProfileScreenInfo(curentUser),
           ProfileActualStories(),
+          ProfilePosts(),
         ],
       ),
     );
