@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'profileScreenWidgets/ProfileScreenAppBar.dart';
 import 'profileScreenWidgets/ProfileScreenDrawer.dart';
 import './profileScreenWidgets/ProfileScreenInfo.dart';
+import './profileScreenWidgets/profileActualStories.dart';
 
 import '../../models/User.dart';
 import '../../utils/UsersDB.dart';
@@ -19,6 +20,7 @@ class ProfileScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ProfileScreenInfo(curentUser),
+          ProfileActualStories(),
         ],
       ),
     );
