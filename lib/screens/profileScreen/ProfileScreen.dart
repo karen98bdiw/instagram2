@@ -17,13 +17,15 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: ProfilScreenAppBar(curentUser),
       endDrawer: ProfileScreenDrawer(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          ProfileScreenInfo(curentUser),
-          ProfileActualStories(),
-          ProfilePosts(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ProfileScreenInfo(curentUser),
+            ProfileActualStories(),
+            ProfilePosts(),
+          ],
+        ),
       ),
     );
   }
