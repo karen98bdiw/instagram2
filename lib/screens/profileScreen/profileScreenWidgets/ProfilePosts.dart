@@ -16,8 +16,8 @@ class ProfilePosts extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: kToolbarHeight,
               child: TabBar(
+                labelPadding: EdgeInsets.symmetric(vertical: 10),
                 tabs: [
                   Icon(Icons.grid_on),
                   Icon(Icons.local_post_office),
