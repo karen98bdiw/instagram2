@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './ProfileUserPosts.dart';
+import './PostOwner.dart';
 
 class ProfilePosts extends StatelessWidget {
   @override
@@ -34,8 +35,8 @@ class ProfilePosts extends StatelessWidget {
                   20,
               child: TabBarView(
                 children: [
-                  ProfileUserPosts(),
-                  Text("friendPosts"),
+                  ProfileUserPosts(PostOwner.CurentUser),
+                  ProfileUserPosts(PostOwner.Else),
                 ],
               ),
             )

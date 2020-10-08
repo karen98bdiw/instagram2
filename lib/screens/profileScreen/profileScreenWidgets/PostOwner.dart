@@ -1,0 +1,4 @@
+enum PostOwner {
+  CurentUser,
+  Else,
+}
